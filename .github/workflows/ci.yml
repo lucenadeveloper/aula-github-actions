@@ -1,0 +1,32 @@
+name: React CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Faz o checkout do código
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Configura o Node.js para a versão do projeto
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    # Instala dependências
+    - name: Install dependencies
+      run: npm install
+
+    # Executa os testes
+    - name: Run tests
+      run: npm test -- --watchAll=false
