@@ -28,8 +28,8 @@ jobs:
       run: npm install
 
     # # Executa os testes
-    # - name: Run tests
-    #   run: npm test -- --watchAll=false
+    - name: Run tests
+      run: npm test -- --watchAll=false
 
     # # Construir a imagem Docker
     # - name: Build Docker image
