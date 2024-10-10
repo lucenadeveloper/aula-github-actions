@@ -31,9 +31,9 @@ jobs:
     - name: Run tests
       run: npm test -- --watchAll=false
 
-    # # Construir a imagem Docker
-    # - name: Build Docker image
-    #   run: docker build -t aula-github-actions:latest .
+    # Construir a imagem Docker
+    - name: Build Docker image
+      run: docker build -t aula-github-actions:latest .
 
     # # Logar no Docker Hub
     # - name: Log in to Docker Hub
