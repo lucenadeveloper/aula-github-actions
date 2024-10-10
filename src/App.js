@@ -11,6 +11,7 @@ const HomePage = () => {
     <div>
       <h1>{message}</h1>
       <button onClick={handleClick}>Clique aqui</button>
+      Oi
     </div>
   );
 };
