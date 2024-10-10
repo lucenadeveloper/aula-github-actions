@@ -1,9 +1,9 @@
-name: React CI and Docker Publish
+name: Pipeline de deploy da aula
 
 on:
   push:
     branches:
-      - main
+      - staging
   pull_request:
     branches:
       - main
@@ -28,21 +28,21 @@ jobs:
       run: npm install
 
     # Executa os testes
-    - name: Run tests
-      run: npm test -- --watchAll=false
+    # - name: Run tests
+    #   run: npm test -- --watchAll=false
 
     # Construir a imagem Docker
-    - name: Build Docker image
-      run: docker build -t aula-github-actions:latest .
+    # - name: Build Docker image
+    #   run: docker build -t aula-github-actions:latest .
 
     # Logar no Docker Hub
-    - name: Log in to Docker Hub
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+    # - name: Log in to Docker Hub
+    #   run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     # Tag da imagem Docker
-    - name: Tag Docker image
-      run: docker tag aula-github-actions:latest ${{ secrets.DOCKER_USERNAME }}/aula-github-actions:latest
+    # - name: Tag Docker image
+    #   run: docker tag aula-github-actions:latest ${{ secrets.DOCKER_USERNAME }}/aula-github-actions:latest
 
     # Fazer push da imagem para o Docker Hub
-    - name: Push Docker image
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/aula-github-actions:latest
+    # - name: Push Docker image
+    #   run: docker push ${{ secrets.DOCKER_USERNAME }}/aula-github-actions:latest
