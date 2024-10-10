@@ -4,7 +4,7 @@ import HomePage from './App';
 describe('HomePage', () => {
   test('renders welcome message', () => {
     render(<HomePage />);
-    const welcomeMessage = screen.getByText(/Bem-vindo à págna inicial!/i);
+    const welcomeMessage = screen.getByText(/Bem-vindo à página inicial!/i);
     expect(welcomeMessage).toBeInTheDocument();
   });
 
