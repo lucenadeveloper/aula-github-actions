@@ -4,7 +4,7 @@ const HomePage = () => {
   const [message, setMessage] = useState('Bem-vindo à página inicial!');
 
   const handleClick = () => {
-    setMessage('Botão pressionado!');
+    setMessage('Botão pressionado na aula!');
   };
 
   return (
